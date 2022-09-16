@@ -4,22 +4,20 @@ Creer
 */
 
 const grid = document.getElementById('grid');
-gridSize = grid.clientWidth;
-console.log(gridSize);
+let numDivPerRow = 10;
+let gridNumber = Math.pow(numDivPerRow,2);
 
-function createDivs(gridNumber) {
+function createDivs() {
     for (let i = 0; i < gridNumber; i++) {
-    test = Math.sqrt(gridNumber);
-    console.log(test);    
+        test = Math.sqrt(gridNumber);
+        console.log(test);    
 
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('gridPiece');
-    newDivMinSize = gridSize / test;
-    console.log(newDivMinSize);
-    newDiv.style.minWidth = `${newDivMinSize}px`;
-    newDiv.style.minHeight = `${newDivMinSize}px`;
-    grid.appendChild(newDiv);
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('gridPiece');
+        grid.appendChild(newDiv);
+        gridCol = grid.style.gridTemplateColumns = `repeat(${Math.sqrt(gridNumber)},1fr)`;
+        gridRow = grid.style.gridTemplateRows = `repeat(${Math.sqrt(gridNumber)},1fr)`;
     }
-   }
-createDivs(3969);
+}
+createDivs(gridNumber);
  
