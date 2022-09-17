@@ -11,14 +11,14 @@ h1 {
 
 #grid {
     background: rgba(34, 90, 245, 0.72);
-    width: 400px;
-    height: 400px;
+    width: 800px;
+    height: 800px;
     border: 5px solid black;
     display: grid;
 }
 
 .gridPiece {
-    background: red;
+    background: rgb(237, 63, 217);
     border: 1px solid black;
     
     box-sizing: border-box;
