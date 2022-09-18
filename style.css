@@ -1,21 +1,36 @@
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-h1 {
+header {
     text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 20px;
+}
+
+#controls, #ghost {
+    width: 150px;
+    height: 300px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    background: blue;
 }
 
 #grid {
     background: rgba(34, 90, 245, 0.72);
-    width: 800px;
-    height: 800px;
+    width: 300px;
+    height: 300px;
     border: 5px solid black;
     display: grid;
 }
+
 
 .gridPiece {
     background: rgb(237, 63, 217);

@@ -4,9 +4,11 @@ Creer
 */
 
 const grid = document.getElementById('grid');
-let numDivPerRow = 70;
+let numDivPerRow = 32;
 let gridNumber = Math.pow(numDivPerRow,2);
-let newDiv = ''
+let newDiv = '';
+let gridPieces = ''
+let isDrawing = false;
 
 function createDivs() {
 /* This function creates the divs of the grid */
@@ -21,14 +23,40 @@ function createDivs() {
 };
 createDivs(gridNumber);
 
+
+window.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+});
+window.addEventListener('mouseup', (e) => {
+    isDrawing = false;
+});
+
+
 function colorDiv () {
 /* when click on one of the newDiv, transform the div in the selected color */
-    let gridPieces = document.querySelectorAll('.gridPiece');
-    gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mousemove', () => {
-        gridPiece.style.background = 'white';
-        console.log(gridPiece);
-        
+    gridPieces = document.querySelectorAll('.gridPiece');
+    gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mousedown', () => {
+        onMove();
         });
     });
 };
 colorDiv();
+
+function onMove () {
+    if (isDrawing = false) {
+        mouseUp();
+    } else {gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mousemove', () => {
+            gridPiece.style.background = 'white';
+            });
+        });
+    };
+};
+
+
+function mouseUp () {
+    gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mouseup', () => {
+        isDrawing = false;
+        });
+    });
+}
+mouseUp();
