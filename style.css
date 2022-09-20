@@ -6,14 +6,28 @@ body {
 header {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: 20px;
+    font-size: 25px;
     margin: 40px 0 100px 0;
+    display: flex;
+    justify-content: center;
 }
+
+#test {
+    width: 700px;
+    height: 100px;
+    background: white;
+    border: 1px solid black;
+    box-shadow: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 main {
     display: flex;
     justify-content: space-between;
-    margin: 50px 300px;
+    margin: 50px 200px;
 }
 
 #controls, #ghost {
@@ -26,7 +40,7 @@ main {
     flex-direction: column;
     background: white;
     justify-content: space-evenly;
-    box-shadow: 5px 5px;
+    box-shadow: 10px 10px;
     border: 1px solid black;
 }
 
@@ -35,7 +49,7 @@ main {
     width: 500px;
     height: 500px;
     display: grid;
-    box-shadow: 5px 5px;
+    box-shadow: 10px 10px;
 }
 
 
