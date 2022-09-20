@@ -1,40 +1,83 @@
 body {
     margin: 0;
+    background: #16FFBD;
 }
 
 header {
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    margin: 40px 0 100px 0;
 }
 
 main {
     display: flex;
     justify-content: space-between;
-    margin: 50px 20px;
+    margin: 50px 300px;
 }
 
 #controls, #ghost {
-    width: 150px;
+    width: 200px;
     height: 300px;
 }
 
 #controls {
     display: flex;
     flex-direction: column;
-    background: blue;
+    background: white;
+    justify-content: space-evenly;
+    box-shadow: 5px 5px;
+    border: 1px solid black;
 }
 
 #grid {
-    background: rgba(34, 90, 245, 0.72);
-    width: 300px;
-    height: 300px;
-    border: 5px solid black;
+    background: white;
+    width: 500px;
+    height: 500px;
     display: grid;
+    box-shadow: 5px 5px;
 }
 
 
 .gridPiece {
-    background: rgb(237, 63, 217);
+    background: white;
     border: 1px solid black;
     
     box-sizing: border-box;
 }
+
+
+/* BUTTON */
+
+
+button {
+    text-align: center;
+    display: inline-block;
+    padding: 15px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position:relative;
+    overflow:hidden;
+    margin: 0 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    background: white;
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background : #16FFBD;
+    left: -55px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all .3s;
+    opacity: 0.5;
+  }
+  
+  button:hover:before {
+    left:95%;
+  }

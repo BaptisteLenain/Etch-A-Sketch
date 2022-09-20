@@ -4,10 +4,10 @@ Creer
 */
 
 const grid = document.getElementById('grid');
-let numDivPerRow = 32;
+let numDivPerRow = 16;
 let gridNumber = Math.pow(numDivPerRow,2);
 let newDiv = '';
-let gridPieces = ''
+let gridPieces = '';
 let isDrawing = false;
 
 function createDivs() {
@@ -23,40 +23,12 @@ function createDivs() {
 };
 createDivs(gridNumber);
 
-
 window.addEventListener('mousedown', (e) => {
     isDrawing = true;
 });
 window.addEventListener('mouseup', (e) => {
     isDrawing = false;
 });
+console.log(isDrawing);
 
 
-function colorDiv () {
-/* when click on one of the newDiv, transform the div in the selected color */
-    gridPieces = document.querySelectorAll('.gridPiece');
-    gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mousedown', () => {
-        onMove();
-        });
-    });
-};
-colorDiv();
-
-function onMove () {
-    if (isDrawing = false) {
-        mouseUp();
-    } else {gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mousemove', () => {
-            gridPiece.style.background = 'white';
-            });
-        });
-    };
-};
-
-
-function mouseUp () {
-    gridPieces.forEach(gridPiece => { gridPiece.addEventListener('mouseup', () => {
-        isDrawing = false;
-        });
-    });
-}
-mouseUp();
