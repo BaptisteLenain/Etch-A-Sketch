@@ -1,13 +1,23 @@
+/*
+Possible colors:
+Green: #16FFBD
+Red: #e90042
+Blue/violet: #6b16ff
+Yellow/orange: #ffb516
+https://www.sessions.edu/color-calculator/
+*/
+
+
 body {
     margin: 0;
-    background: #16FFBD;
+    background: #ffb516;
 }
 
 header {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     font-size: 25px;
-    margin: 40px 0 100px 0;
+    margin: 20px 0 100px 0;
     display: flex;
     justify-content: center;
 }
@@ -27,7 +37,7 @@ header {
 main {
     display: flex;
     justify-content: space-between;
-    margin: 50px 200px;
+    margin: 50px 0px;
 }
 
 #controls, #ghost {
@@ -46,14 +56,14 @@ main {
 
 #grid {
     background: white;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     display: grid;
     box-shadow: 10px 10px;
 }
 
 
-.gridPiece {
+.grid-element {
     background: white;
     border: 1px solid black;
     
@@ -84,7 +94,7 @@ button {
     position: absolute;
     height: 150px;
     width: 50px;
-    background : #16FFBD;
+    background : #ffb516;
     left: -55px;
     top: -40px;
     transform: rotate(37deg);
