@@ -11,6 +11,10 @@ https://www.sessions.edu/color-calculator/
 body {
     margin: 0;
     background: #ffb516;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 
 header {
@@ -67,7 +71,8 @@ main {
 
 .grid-element {
     background: white;
-    border: 1px solid black;
+   
+
     
     box-sizing: border-box;
 }
@@ -80,6 +85,31 @@ main {
     font-size: 12px;
 }
 
+footer {
+    margin-top: auto;
+}
+
+#footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    align-self: flex-end;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color:white; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
 
 /* BUTTON */
 

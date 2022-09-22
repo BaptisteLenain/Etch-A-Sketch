@@ -1,5 +1,5 @@
 const DEFAULT_MODE = 'color';
-const DEFAULT_COLOR = '#333333';
+const DEFAULT_COLOR = 'black';
 const DEFAULT_SIZE = 16;
 
 let currentMode = DEFAULT_MODE;
@@ -21,11 +21,12 @@ const colorChoiceBtn = document.getElementById('colorChoiceBtn');
 
 
 
+
 clearBtn.onclick = () => reloadGrid();
 eraserBtn.onclick = () => setCurrentMode('eraser');
 colorBtn.onclick = () => setCurrentMode('color');
 sliderBtn.oninput = () => changeSize(sliderBtn.value);
-colorChoiceBtn.onchange = () => colorChoice(colorChoiceBtn.value);
+colorChoiceBtn.oninput = () => colorChoice(colorChoiceBtn.value);
 
 function setCurrentMode(newMode) {
     currentMode = newMode;
