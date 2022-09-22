@@ -16,18 +16,23 @@
 </head>
 <body>
     <header>
-        <div id="test">
+        <div id="title">
             <h1>Etch-A-Sketch</h1>
         </div>
     </header>
    
     <main>
         <div id="controls">
+            <div id="colorChoiceBtn-container">
+                <input type="color" id="colorChoiceBtn">
+            </div>
             <button id="colorBtn">color</button>
             <button id="eraserBtn">eraser</button>
             <button id="clearBtn">clear</button>
-            <div id="slider"></div>
-            <input type="range" min="1" max="64" value="16" id="sliderBtn">
+            <div id="slider-container">
+                <div id="slider"></div>
+                <input type="range" min="1" max="64" value="16" id="sliderBtn">
+            </div>
         </div>
         <div id="grid"></div>
         <div id="ghost"></div>

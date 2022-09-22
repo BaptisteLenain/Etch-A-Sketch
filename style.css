@@ -22,7 +22,7 @@ header {
     justify-content: center;
 }
 
-#test {
+#title {
     width: 700px;
     height: 100px;
     background: white;
@@ -37,12 +37,13 @@ header {
 main {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0px;
+    margin: 50px 100px;
 }
 
 #controls, #ghost {
     width: 200px;
-    height: 300px;
+    height: 400px;
+    box-sizing: border-box;
 }
 
 #controls {
@@ -60,6 +61,7 @@ main {
     height: 400px;
     display: grid;
     box-shadow: 10px 10px;
+    min-width: 400px;
 }
 
 
@@ -70,9 +72,25 @@ main {
     box-sizing: border-box;
 }
 
+#slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
 
 /* BUTTON */
 
+.active {
+    background: black;
+    color: white;
+}
+
+.active button {
+opacity: 1;
+}
 
 button {
     text-align: center;
@@ -99,9 +117,69 @@ button {
     top: -40px;
     transform: rotate(37deg);
     transition: all .3s;
-    opacity: 0.5;
+    opacity: 1;
   }
   
   button:hover:before {
     left:95%;
   }
+
+
+  /* SLIDER BTN */
+
+  #sliderBtn {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 10px;
+    background: black;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 7px;
+    border-radius: 10px;
+  }
+  
+  #sliderBtn:hover {
+    opacity: 0.7;
+  }
+  
+  #sliderBtn::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ffb516;
+    cursor: pointer;
+  }
+  
+  #sliderBtn::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffb516;
+    cursor: pointer;
+  }
+
+/* Color choice button */
+
+#colorChoiceBtn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#colorChoiceBtn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0px;
+}
+
+#colorChoiceBtn::-webkit-color-swatch {
+    border-radius: 10%;
+}

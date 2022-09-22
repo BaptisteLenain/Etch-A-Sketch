@@ -16,21 +16,53 @@ const eraserBtn = document.getElementById('eraserBtn');
 const colorBtn = document.getElementById('colorBtn');
 const sliderBtn = document.getElementById('sliderBtn');
 const slider = document.getElementById('slider');
-slider.innerHTML = `${sliderBtn.value} x ${sliderBtn.value}`;
+const colorChoiceBtn = document.getElementById('colorChoiceBtn');
+
+
+
 
 clearBtn.onclick = () => reloadGrid();
-eraserBtn.onclick = () => currentMode = 'eraser';
-colorBtn.onclick = () => currentMode = 'color';
-sliderBtn.oninput = () => slider.innerHTML = `${sliderBtn.value} x ${sliderBtn.value}`;
+eraserBtn.onclick = () => setCurrentMode('eraser');
+colorBtn.onclick = () => setCurrentMode('color');
 sliderBtn.oninput = () => changeSize(sliderBtn.value);
+colorChoiceBtn.onchange = () => colorChoice(colorChoiceBtn.value);
+
+function setCurrentMode(newMode) {
+    currentMode = newMode;
+    activeMode(currentMode);
+};
+
+function activeMode(currentMode) {
+    if (currentMode === 'color') {
+        colorBtn.classList.add('active');
+        eraserBtn.classList.remove('active');
+    } else {
+        colorBtn.classList.remove('active');
+        eraserBtn.classList.add('active');
+    }
+};
+activeMode(currentMode);
+
+function colorChoice (value) {
+    currentColor = value;
+    console.log(currentColor);
+}
+
 
 function changeSize(value) {
-
+    currentSize = value;
+    gridNumber = Math.pow(currentSize,2);
+    console.log(currentSize);
+    console.log(gridNumber);
+    grid.innerHTML = '';
+    createDivs(gridNumber);
+    sliderShow(currentSize);
 };
 
-function setCurrentSize() {
+function sliderShow(currentSize) {
+    slider.innerHTML = `${currentSize} x ${currentSize}`;
+}
 
-};
 
 const grid = document.getElementById('grid');
 let gridNumber = Math.pow(currentSize,2);
@@ -40,18 +72,11 @@ let isDrawing = false;
 
 function reloadGrid() {
     grid.innerHTML = '';
-    createDivs();
+    createDivs(gridNumber);
 };
 
 
-    sliderBtn.oninput = function () {
-    currentSize = sliderBtn.value;
-    gridNumber = Math.pow(currentSize,2);
-    console.log(currentSize);
-    console.log(gridNumber);
-    grid.innerHTML = '';
-    createDivs(gridNumber);
-    };
+
 
 
 
@@ -80,6 +105,9 @@ function changeColor(e) {
   }
 
 
-    
+  window.onload = () => {
+    sliderShow(currentSize);
+    activeMode(currentMode);
+  } 
 
 
